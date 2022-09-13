@@ -16,9 +16,7 @@ def TransformarBinario(NUM_DEC):
       Binario[Achou]=1
   Binario.reverse()
   BinarioInText= "".join(str(x) for x in Binario)
-  #for i in range(FoiAte+1):
-  #  BinarioInText+=str(Binario[FoiAte-i])
-  print("O Valor em Binario é ",BinarioInText)
+    print("O Valor em Binario é ",BinarioInText)
 Continua=True
 while Continua:
   Numero=eval(input("Informe um numero decimal que queira tansformar em binario: "))

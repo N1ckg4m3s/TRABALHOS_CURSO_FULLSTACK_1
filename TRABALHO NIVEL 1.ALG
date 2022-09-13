@@ -1,6 +1,6 @@
 Algoritmo "Descobir numeros primos"
 // Disciplina  : DESVENDANDO ESSA CAIXA PRETA
-// DescriÁ„o   : Descobir quais numeros primos tem atÈ o escolhido
+// Descri√ß√£o   : Descobir quais numeros primos tem at√© o escolhido
 // Autor(a)    : Nicolas de Aguiar Silva
 // Data atual  : 22/07/2022
 Var
@@ -23,25 +23,25 @@ enquanto continua faca
                 fimpara
                 se Quantos=2 entao
                    Somatot:=Somatot+i
-                   escreval(i," È primo")
+                   escreval(i," √© primo")
                 fimse
          fimpara
-         escreval("A soma de todos os numeros menores iguais a",Valor," È", Somatot)
-         escreval("Quer ver os primos de outro numero? (1 para SIM, 2 para N√O)")
+         escreval("A soma de todos os numeros menores iguais a",Valor," √©", Somatot)
+         escreval("Quer ver os primos de outro numero? (1 para SIM, 2 para N√ÉO)")
          continuasegundo:=verdadeiro
          enquanto continuasegundo faca
             leia(quercontinuar)
             escolha(quercontinuar)
             caso 1
-                 escreva("Ok Ent„o, ")
+                 escreva("Ok Ent√£o, ")
                  continuasegundo:=falso
             caso 2
                  escreva("Ok, Tchau")
                  continua:=falso
                  continuasegundo:=falso
             outrocaso
-                     escreval("O numero",quercontinuar," N„o È valido")
-                     escreval("Escolha 1 para SIM, 2 para N√O")
+                     escreval("O numero",quercontinuar," N√£o √© valido")
+                     escreval("Escolha 1 para SIM, 2 para N√ÉO") 
             fimescolha
          fimenquanto
 fimenquanto

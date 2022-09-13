@@ -26,4 +26,4 @@ while Continua:
     TransformarBinario(Numero)
     Continua=False
   else:
-    print("O numero informado é {",type(Numero),"}")
+    print("O numero informado é {",type(Numero),"}") 

@@ -1,0 +1,37 @@
+def GerarResposta(D):
+  def Create_Array(Data,Size,Resposta):
+    SemiArray=[]
+    def AcharProxNum(LastValue,VezChamado,Resposta,SemiArray):
+      for i in range(len(Data)):
+        if not i<=LastValue:
+          SemiArray.append(Data[i])
+          if not len(SemiArray)<Size+1:
+            Resposta.append(SemiArray)
+            SemiArray=SemiArray[:-1]
+    for i in range(len(Data)): #Numero Array Start
+      UltimoEncontrado=i-1
+      SemiArray=[Data[i]]
+      if len(SemiArray)<Size+1:
+        AcharProxNum(i,0,Resposta,SemiArray)
+      else:
+        Resposta.append(SemiArray)
+    return Resposta
+  Resposta=[[]]
+  for i in range(len(D)):
+    Create_Array(D,i,Resposta) #Gera o tamanho da array a Criar
+  print(Resposta)
+
+print("Escreva numeros separados por virgula ',' ")
+Valor=input("Numeros: ")
+VlrMomt="" # Valo momentaneo
+Rest=[]
+for i in Valor:
+  if i!=",":
+    VlrMomt=i
+  else:
+    if VlrMomt!="":
+      Rest.append(VlrMomt)
+      VlrMomt=""
+if VlrMomt!="," and VlrMomt!="":
+  Rest.append(VlrMomt)
+GerarResposta(Rest)

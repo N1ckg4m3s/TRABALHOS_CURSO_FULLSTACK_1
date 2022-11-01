@@ -1,0 +1,140 @@
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+from tkinter import *
+from tkinter import ttk
+
+## VAREAVEIS ##
+AcaoFazendo="NILL"
+DadosAdicionais=""
+BotaoAnterior=None
+## ==== CLASSE ==== ##
+def ClickBot2(Slf):
+    EntTexto.delete(0,END)
+    global DadosAdicionais,BotaoAnterior,AcaoFazendo
+    AcaoFazendo="NOVO VALOR"
+    LabelAcao.configure(text=f"AÇÃO FAZENDO: {AcaoFazendo}")
+    if not BotaoAnterior==None:
+        BotaoAnterior.configure(bg="#f0f0f0")
+    EntTexto.delete(0,END)
+    DadosAdicionais=Slf
+    BotaoAnterior=Slf.Bot
+    BotaoAnterior.configure(bg="Gray")
+TodosGastos=[]
+class Gastos:
+    def __init__(self,Gasto):
+        global TodosGastos
+        self.Gasto=Gasto
+        TodosGastos.append([Gasto,[]])
+        self.Lista=TodosGastos[len(TodosGastos)-1][1]
+        self.Bot=Button(Cnv,text=Gasto,
+                width=24,
+                height=1,
+                command=lambda:ClickBot2(self)
+            )
+        self.Bot.pack()
+    def CriarGrafico(self):
+        print(self.Lista)
+    def NovoGasto(self,Valor):
+        self.Lista.append(Valor)
+## JANELA ##
+Janela=Tk()
+Janela.geometry("400x400+300+100") # SIZEx x SIZEY + POSx + POSy
+Janela.resizable(False,False)
+## =- -= =- -= =- LADO GASTOS -= =- -= =- -= ##
+lado1=LabelFrame(Janela,text="LISTA DE GASTOS",width=190,height=390,).place(x=5,y=5)
+Cnv=Canvas(lado1,width=175,height=365)
+def BotClick(ACAO):
+    global BotaoAnterior,AcaoFazendo
+    if ACAO=="NOVO VALOR":
+        if BotaoAnterior!=None:
+            AcaoFazendo=ACAO
+            LabelAcao.configure(text=f"AÇÃO FAZENDO: {ACAO}")
+    elif ACAO=="CRIAR":
+        if BotaoAnterior!=None:
+            BotaoAnterior.configure(bg="#f0f0f0")
+            BotaoAnterior=None
+        AcaoFazendo=ACAO
+        LabelAcao.configure(text=f"AÇÃO FAZENDO: {ACAO}")
+    BotaoAnterior=None
+Button(Cnv,text="NOVO GASTO",bg="green",width=24,height=1,command=lambda:BotClick("CRIAR")).pack()
+Cnv.place(x=10,y=20)
+## =- -= =- -= =- LADO BOTOES -= =- -= =- -= ##
+lado2=LabelFrame(Janela,text="BOTÕES",
+            width=190,
+            height=190,
+).place(x=205,y=5)
+def GerarGrafico(TF):
+    global BotaoAnterior,DadosAdicionais,TodosGastos
+    if TF:
+        if BotaoAnterior!=None:
+            AntBugList=[]
+            for i in range(len(DadosAdicionais.Lista)):
+                AntBugList.append([i])
+            LinRed=LinearRegression()
+            LinRed.fit(X=AntBugList,y=DadosAdicionais.Lista)
+            plt.title("GRAFICO COM REGRESSÃO LINEAR")
+            print("Apenas olhando")
+            plt.plot(AntBugList,DadosAdicionais.Lista,color="black",marker="o")
+            plt.plot(AntBugList,LinRed.predict(AntBugList),color="blue")
+            plt.show()
+    else:
+        plt.title("TODOS OS VALORES")
+        for i in TodosGastos:
+            plt.plot(i[1],label=i[0])
+        plt.legend()
+        plt.show()
+Button(lado2,text="NOVO VALOR",width=24,height=1,command=lambda:BotClick("NOVO VALOR")).place(x=210,y=20)
+Button(lado2,text="GERAR GRAFICO",width=24,height=1,command=lambda:GerarGrafico(True)).place(x=210,y=50)
+Button(lado2,text="TODOS OS GRAFICOS",width=24,height=1,command=lambda:GerarGrafico(False)).place(x=210,y=80)
+
+## =- -= =- -= =- LADO EDIT -= =- -= =- -= ##
+## functions ##
+def ExecAction():
+    global DadosAdicionais
+    if AcaoFazendo=="CRIAR":
+        if EntTexto.get()!="":
+            Gastos(EntTexto.get())
+            EntTexto.delete(0,END)
+    elif AcaoFazendo=="NOVO VALOR":
+        if EntTexto.get()!="" and EntTexto.get().isnumeric():
+            DadosAdicionais.NovoGasto(int(EntTexto.get()))
+            EntTexto.delete(0,END)
+
+## frnt ##
+lado3=LabelFrame(Janela,text="AREA DE EDIÇÃO",
+            width=190,
+            height=190,
+).place(x=205,y=205)
+
+LabelAcao=ttk.Label(lado3,text="AÇÃO FAZENDO:")
+LabelAcao.place(x=210,y=225)
+
+EntTexto=ttk.Entry(lado3,width=28)
+EntTexto.place(x=210,y=245)
+ttk.Button(lado3,width=28,text="Executar",command=ExecAction
+).place(x=210,y=275)
+
+## GERAR DADOS proximos ao do trabalho ##
+A=Gastos("ALIMENTAÇÃO")
+A.NovoGasto(100)
+A.NovoGasto(0)
+A.NovoGasto(0)
+A.NovoGasto(150)
+A.NovoGasto(17)
+
+A=Gastos("VESTUARIO")
+A.NovoGasto(15)
+A.NovoGasto(40)
+A.NovoGasto(60)
+A.NovoGasto(0)
+A.NovoGasto(50)
+
+A=Gastos("TRANSPORTE")
+A.NovoGasto(0)
+A.NovoGasto(0)
+A.NovoGasto(100)
+A.NovoGasto(300)
+A.NovoGasto(55)
+
+Janela.mainloop()

@@ -2,6 +2,7 @@
 
 Repositório para envio dos trabalhos feitos no 1º Semestre do curso FullStack Estacio
 
+<hr>
 -- == INFORMAÇÕES SOBRE OS TRABALHOS == --
 
 TRABALHO NIVEL 1
@@ -9,6 +10,7 @@ TRABALHO NIVEL 1
   <li>Descobir quais numeros primos tem até um determinado numero</li>
   <li>LINGUAGEM USADA: AlgoBox</li>
 </ul>
+
 <hr>
 TRABALHO NIVEL 2:
 <ul>
@@ -16,12 +18,14 @@ TRABALHO NIVEL 2:
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 
+<hr>
 TRABALHO NIVEL 3:
 <ul>
   <li>Gerar combinações possíveis de Numero/Letras passadas</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 
+<hr>
 TRABALHO NIVEL 4:
 <ul>
   <li>Gerar gráficos com dados de teste</li>

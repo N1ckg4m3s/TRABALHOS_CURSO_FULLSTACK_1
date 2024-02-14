@@ -10,20 +10,20 @@ TRABALHO NIVEL 1
   <li>LINGUAGEM USADA: AlgoBox</li>
 </ul>
 
+TRABALHO NIVEL 2:
 <ul>
-  TRABALHO NIVEL 2:
   <li marginleft="10px">Transfomar numeros em Binario</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 
+TRABALHO NIVEL 3:
 <ul>
-  TRABALHO NIVEL 3:
   <li>Gerar combinações possíveis de Numero/Letras passadas</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 
+TRABALHO NIVEL 4:
 <ul>
-  TRABALHO NIVEL 4:
   <li>Gerar gráficos com dados de teste</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>

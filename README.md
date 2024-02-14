@@ -1,37 +1,29 @@
-# TRABALHOS_CURSO_FULLSTACK_1
-
-<h1 align="center"> Seu título aqui </h1>
+<h1 align="center"> TRABALHOS_CURSO_FULLSTACK_1 </h1>
 
 Repositório para envio dos trabalhos feitos no 1º Semestre do curso FullStack Estacio
 
 -- == INFORMAÇÕES SOBRE OS TRABALHOS == --
 
-•	TRABALHO NIVEL 1:
+<ul>
+  TRABALHO NIVEL 1:
+  <li>Descobir quais numeros primos tem até um determinado numero</li>
+  <li>LINGUAGEM USADA: AlgoBox</li>
+</ul>
 
-  o	Descobir quais numeros primos tem até um determinado numero
-  
-  o	LINGUAGEM USADA: AlgoBox
+<ul>
+  TRABALHO NIVEL 2:
+  <li>Transfomar numeros em Binario</li>
+  <li>LINGUAGEM USADA: Python</li>
+</ul>
 
+<ul>
+  TRABALHO NIVEL 3:
+  <li>Gerar combinações possíveis de Numero/Letras passadas</li>
+  <li>LINGUAGEM USADA: Python</li>
+</ul>
 
-•	TRABALHO NIVEL 2:
-
-  o	Transfomar numeros em Binario
-  
-  o	LINGUAGEM USADA: Python
-  
-
-
-•	TRABALHO NIVEL 3:
-
-  o	Gerar combinações possíveis de Numero/Letras passadas
-  
-  o	LINGUAGEM USADA: Python
-
-
-•	TRABALHO NIVEL 4:
-
-  o	Gerar gráficos com dados de teste
-  
-  o	LINGUAGEM USADA: Python
-  
-
+<ul>
+  TRABALHO NIVEL 4:
+  <li>Gerar gráficos com dados de teste</li>
+  <li>LINGUAGEM USADA: Python</li>
+</ul>

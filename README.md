@@ -9,7 +9,7 @@ TRABALHO NIVEL 1
   <li>Descobir quais numeros primos tem até um determinado numero</li>
   <li>LINGUAGEM USADA: AlgoBox</li>
 </ul>
-
+<hr>
 TRABALHO NIVEL 2:
 <ul>
   <li marginleft="10px">Transfomar numeros em Binario</li>

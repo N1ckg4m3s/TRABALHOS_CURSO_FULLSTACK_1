@@ -4,15 +4,15 @@ Repositório para envio dos trabalhos feitos no 1º Semestre do curso FullStack 
 
 -- == INFORMAÇÕES SOBRE OS TRABALHOS == --
 
+TRABALHO NIVEL 1
 <ul>
-  TRABALHO NIVEL 1:
   <li>Descobir quais numeros primos tem até um determinado numero</li>
   <li>LINGUAGEM USADA: AlgoBox</li>
 </ul>
 
 <ul>
   TRABALHO NIVEL 2:
-  <li margin-left="10px">Transfomar numeros em Binario</li>
+  <li marginleft="10px">Transfomar numeros em Binario</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 

@@ -12,7 +12,7 @@ Repositório para envio dos trabalhos feitos no 1º Semestre do curso FullStack 
 
 <ul>
   TRABALHO NIVEL 2:
-  <li>Transfomar numeros em Binario</li>
+  <li margin-left="10px">Transfomar numeros em Binario</li>
   <li>LINGUAGEM USADA: Python</li>
 </ul>
 
